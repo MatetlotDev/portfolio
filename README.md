@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Matthias Lechien
 
-## Getting Started
+Portfolio de développeur front-end freelance (React / Next.js / TypeScript).
+Single-page statique, optimisée SEO et performance, prête pour Vercel.
 
-First, run the development server:
+## Stack
+
+- [Next.js](https://nextjs.org) (App Router) + TypeScript strict
+- Tailwind CSS v4
+- Aucune autre dépendance : animations en CSS natif (IntersectionObserver), pas de back-end.
+
+## Lancer en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site est disponible sur [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Autres commandes :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # build de production
+npm run lint    # vérification ESLint
+```
 
-## Learn More
+## Éditer le contenu
 
-To learn more about Next.js, take a look at the following resources:
+**Tout le contenu du site est centralisé dans [`src/data/profile.ts`](src/data/profile.ts)** :
+profil, bio, compétences, expériences, projets, liens, textes SEO. Aucun texte
+n'est en dur dans les composants — modifier ce fichier suffit.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Données à compléter (marquées `[À COMPLÉTER]` dans `profile.ts`)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `siteUrl` : le domaine final une fois déployé (utilisé pour le SEO : canonical, sitemap, Open Graph).
+- `social.linkedin` / `social.github` : les liens sont masqués automatiquement tant que la valeur est `""`.
+- URL du projet Urban Boulder (et Racclimb) : idem, le lien « Voir le projet » apparaît dès que l'URL est renseignée.
+- **CV** : déposer le PDF dans `public/cv-matthias-lechien.pdf` (le bouton de téléchargement pointe déjà dessus).
+- Captures de projets : à déposer dans `public/projects/`, puis remplacer le panneau décoratif dans `src/components/sections/Projects.tsx` par un `next/image`.
+- Réalisations chiffrées Famoco : à ajouter dans le tableau `description` de l'expérience Famoco.
 
-## Deploy on Vercel
+## Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/              # layout (metadata, fonts), page, SEO (sitemap, robots, OG image)
+├── components/
+│   ├── layout/       # Header (sticky + menu mobile), Footer
+│   ├── sections/     # Hero, About, Skills, Experience, Projects, Contact
+│   └── ui/           # Button, Tag, SectionHeading, AvailabilityBadge, FadeIn
+├── data/profile.ts   # ← tout le contenu du site
+└── lib/jsonld.ts     # données structurées schema.org (ProfilePage + Person)
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## SEO inclus
+
+- Metadata App Router (title template, description, keywords, canonical, `lang="fr"`)
+- Open Graph + Twitter Cards, image OG générée via `next/og` (`src/app/opengraph-image.tsx`)
+- JSON-LD `ProfilePage` / `Person`
+- `sitemap.xml` et `robots.txt` générés
+- HTML sémantique (un seul `h1`, sections, skip-link, focus visibles)
+
+## Déployer sur Vercel
+
+1. Pousser le repo sur GitHub.
+2. Sur [vercel.com](https://vercel.com), « Add New Project » → importer le repo. Les réglages par défaut (framework Next.js détecté) suffisent.
+3. Une fois le domaine final connu, mettre à jour `siteUrl` dans `src/data/profile.ts` et redéployer.
+
+La page est entièrement statique (prérendue au build) : aucune configuration serveur nécessaire.

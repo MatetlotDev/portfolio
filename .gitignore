@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Original photo (10 Mo) — seule la version optimisée profile-pic-web.jpg est versionnée
+public/profile-pic.jpg
