@@ -6,6 +6,7 @@ import Experience from "@/components/sections/Experience";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
+import MouseGlow from "@/components/ui/MouseGlow";
 import { buildJsonLd } from "@/lib/jsonld";
 
 export default function Home() {
@@ -22,7 +23,8 @@ export default function Home() {
         Aller au contenu
       </a>
       <Header />
-      <main className="flex-1">
+      <MouseGlow />
+      <main className="flex-1 overflow-x-clip">
         <Hero />
         <About />
         <Skills />

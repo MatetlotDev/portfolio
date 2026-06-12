@@ -8,7 +8,7 @@ export default function Footer() {
   ].filter((social) => social.url !== "");
 
   return (
-    <footer className="border-t border-gray-200 bg-white">
+    <footer className="border-t border-gray-200/80">
       <div className="mx-auto max-w-5xl px-6 py-10">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="text-sm font-semibold text-navy">{profile.name}</p>

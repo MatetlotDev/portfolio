@@ -48,7 +48,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">{children}</body>
+      {/* suppressHydrationWarning : des extensions navigateur (ColorZilla…)
+          injectent des attributs sur <body> avant l'hydratation React */}
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

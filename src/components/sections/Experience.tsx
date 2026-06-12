@@ -5,7 +5,11 @@ import { experiences } from "@/data/profile";
 
 export default function Experience() {
   return (
-    <section id="experiences" className="bg-white py-24">
+    <section id="experiences" className="relative py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-18%] top-1/4 -z-10 size-[480px] rounded-full bg-gradient-to-bl from-emerald-100/50 via-teal-50/40 to-transparent blur-3xl"
+      />
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading

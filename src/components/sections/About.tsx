@@ -4,7 +4,12 @@ import { about } from "@/data/profile";
 
 export default function About() {
   return (
-    <section id="a-propos" className="bg-white py-24">
+    <section id="a-propos" className="relative py-24">
+      {/* Écho discret du mesh du hero */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-15%] top-16 -z-10 size-[420px] rounded-full bg-gradient-to-bl from-emerald-100/60 via-teal-50/40 to-transparent blur-3xl"
+      />
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading eyebrow={about.eyebrow} title={about.title} />
@@ -24,7 +29,7 @@ export default function About() {
               {about.differentiators.map((item) => (
                 <li
                   key={item.title}
-                  className="rounded-xl border border-gray-100 bg-surface p-5"
+                  className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
                 >
                   <h3 className="flex items-center gap-2 text-sm font-semibold text-navy">
                     <svg

@@ -39,7 +39,11 @@ export default function Projects() {
   const others = projects.filter((project) => !project.featured);
 
   return (
-    <section id="projets" className="py-24">
+    <section id="projets" className="relative py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 bottom-10 -z-10 size-[440px] rounded-full bg-gradient-to-tr from-sky-100/50 via-emerald-50/40 to-transparent blur-3xl"
+      />
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading

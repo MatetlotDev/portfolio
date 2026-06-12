@@ -6,12 +6,15 @@ import { profile } from "@/data/profile";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
-      {/* Mesh gradient d'arrière-plan, doux et aéré */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+    <section id="top" className="relative">
+      {/* Mesh gradient d'arrière-plan, doux et aéré — déborde sur la section suivante */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
         <div className="absolute -top-32 right-[-12%] size-[560px] rounded-full bg-gradient-to-br from-emerald-200/70 via-teal-100/60 to-transparent blur-3xl" />
         <div className="absolute -left-40 top-1/4 size-[480px] rounded-full bg-gradient-to-tr from-sky-200/60 via-blue-100/50 to-transparent blur-3xl" />
-        <div className="absolute bottom-[-20%] right-1/4 size-[420px] rounded-full bg-gradient-to-t from-indigo-100/50 to-transparent blur-3xl" />
+        <div className="absolute bottom-[-35%] right-1/4 size-[420px] rounded-full bg-gradient-to-t from-indigo-100/60 to-transparent blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 pb-24 pt-32 sm:pt-40 lg:pb-28">
