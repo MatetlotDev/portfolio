@@ -1,9 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { navLinks, profile } from "@/data/profile";
+import LanguageToggle from "@/components/ui/LanguageToggle";
+import { profileBase, type NavLink, type UiStrings } from "@/data/profile";
+import type { Locale } from "@/i18n/config";
 
-export default function Header() {
+export default function Header({
+  nav,
+  ui,
+  locale,
+}: {
+  nav: NavLink[];
+  ui: UiStrings;
+  locale: Locale;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,15 +36,15 @@ export default function Header() {
         <a
           href="#top"
           className="text-base font-bold tracking-tight text-navy"
-          aria-label={`${profile.name} — retour en haut de page`}
+          aria-label={`${profileBase.name} — ${ui.backToTop}`}
         >
-          {profile.name}
+          {profileBase.name}
         </a>
 
         {/* Navigation desktop */}
-        <nav aria-label="Navigation principale" className="hidden md:block">
+        <nav aria-label={ui.primaryNav} className="hidden md:block">
           <ul className="flex items-center gap-7">
-            {navLinks.map((link) => (
+            {nav.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
@@ -47,49 +57,55 @@ export default function Header() {
           </ul>
         </nav>
 
-        <a
-          href="#contact"
-          className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark md:inline-flex"
-        >
-          Me contacter
-        </a>
-
-        {/* Bouton menu mobile */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          className="inline-flex size-10 items-center justify-center rounded-lg text-navy md:hidden"
-        >
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            className="size-5"
+        <div className="hidden items-center gap-4 md:flex">
+          <LanguageToggle locale={locale} label={ui.langSwitch} />
+          <a
+            href="#contact"
+            className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
           >
-            {menuOpen ? (
-              <path d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
-          </svg>
-        </button>
+            {ui.contactCta}
+          </a>
+        </div>
+
+        {/* Contrôles mobile */}
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageToggle locale={locale} label={ui.langSwitch} />
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            aria-label={menuOpen ? ui.closeMenu : ui.openMenu}
+            className="inline-flex size-10 items-center justify-center rounded-lg text-navy"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              className="size-5"
+            >
+              {menuOpen ? (
+                <path d="M6 6l12 12M18 6L6 18" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Menu mobile */}
       {menuOpen && (
         <nav
           id="mobile-menu"
-          aria-label="Navigation mobile"
+          aria-label={ui.mobileNav}
           className="border-t border-gray-100 bg-white px-6 pb-6 pt-3 md:hidden"
         >
           <ul className="flex flex-col gap-1">
-            {navLinks.map((link) => (
+            {nav.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
@@ -106,7 +122,7 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
             className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
           >
-            Me contacter
+            {ui.contactCta}
           </a>
         </nav>
       )}

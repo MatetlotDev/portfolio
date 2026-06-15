@@ -1,35 +1,39 @@
-import { profile, seo, skillCategories } from "@/data/profile";
+import { getContent, profileBase } from "@/data/profile";
+import type { Locale } from "@/i18n/config";
 
 /**
- * Données structurées schema.org : ProfilePage + Person.
+ * Données structurées schema.org : ProfilePage + Person, localisées.
  * Les liens sociaux vides sont exclus automatiquement.
  */
-export function buildJsonLd() {
-  const sameAs = [profile.social.linkedin, profile.social.github].filter(
-    (url) => url !== ""
-  );
+export function buildJsonLd(locale: Locale) {
+  const content = getContent(locale);
+  const sameAs = [
+    profileBase.social.linkedin,
+    profileBase.social.github,
+  ].filter((url) => url !== "");
 
   const person = {
     "@type": "Person",
-    name: profile.name,
-    jobTitle: "Développeur Front-End Freelance",
-    description: seo.description,
-    email: `mailto:${profile.email}`,
-    telephone: profile.phoneDisplay,
-    url: profile.siteUrl,
+    name: profileBase.name,
+    jobTitle: content.jobTitle,
+    description: content.seo.description,
+    email: `mailto:${profileBase.email}`,
+    telephone: profileBase.phoneDisplay,
+    url: `${profileBase.siteUrl}/${locale}`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Bruxelles",
       addressCountry: "BE",
     },
     knowsLanguage: ["fr", "en"],
-    knowsAbout: skillCategories.flatMap((category) => category.skills),
+    knowsAbout: content.skillCategories.flatMap((category) => category.skills),
     ...(sameAs.length > 0 && { sameAs }),
   };
 
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
+    inLanguage: locale,
     mainEntity: person,
   };
 }

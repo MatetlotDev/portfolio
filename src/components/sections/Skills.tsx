@@ -1,9 +1,18 @@
 import FadeIn from "@/components/ui/FadeIn";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Tag from "@/components/ui/Tag";
-import { skillCategories } from "@/data/profile";
+import type {
+  SectionHeadingContent,
+  SkillCategory,
+} from "@/data/profile";
 
-export default function Skills() {
+export default function Skills({
+  heading,
+  categories,
+}: {
+  heading: SectionHeadingContent;
+  categories: SkillCategory[];
+}) {
   return (
     <section id="competences" className="relative py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
@@ -13,14 +22,14 @@ export default function Skills() {
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading
-            eyebrow="Compétences"
-            title="Stack & savoir-faire"
-            description="Un socle front-end solide, complété par une vraie culture produit et des méthodes de travail éprouvées en équipe distribuée."
+            eyebrow={heading.eyebrow}
+            title={heading.title}
+            description={heading.description}
           />
         </FadeIn>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {skillCategories.map((category, index) => (
+          {categories.map((category, index) => (
             <FadeIn key={category.title} delay={index * 75}>
               <div className="h-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                 <h3 className="text-base font-semibold text-navy">

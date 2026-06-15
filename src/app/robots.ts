@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { profile } from "@/data/profile";
+import { profileBase } from "@/data/profile";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${profile.siteUrl}/sitemap.xml`,
+    sitemap: `${profileBase.siteUrl}/sitemap.xml`,
   };
 }

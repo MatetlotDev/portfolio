@@ -1,8 +1,8 @@
-import { profile } from "@/data/profile";
-
 export default function AvailabilityBadge({
+  label,
   compact = false,
 }: {
+  label: string;
   compact?: boolean;
 }) {
   return (
@@ -15,7 +15,7 @@ export default function AvailabilityBadge({
         <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
         <span className="relative inline-flex size-2 rounded-full bg-accent" />
       </span>
-      {profile.availability}
+      {label}
     </span>
   );
 }

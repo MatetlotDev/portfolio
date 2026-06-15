@@ -1,9 +1,18 @@
 import FadeIn from "@/components/ui/FadeIn";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Tag from "@/components/ui/Tag";
-import { projects, type Project } from "@/data/profile";
+import type {
+  Project,
+  SectionHeadingContent,
+} from "@/data/profile";
 
-function ProjectLink({ project }: { project: Project }) {
+function ProjectLink({
+  project,
+  label,
+}: {
+  project: Project;
+  label: string;
+}) {
   if (project.url === "") {
     return project.status ? (
       <p className="text-sm font-medium text-gray-500">{project.status}</p>
@@ -17,7 +26,7 @@ function ProjectLink({ project }: { project: Project }) {
       rel="noopener noreferrer"
       className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-dark"
     >
-      Voir le projet
+      {label}
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -34,7 +43,15 @@ function ProjectLink({ project }: { project: Project }) {
   );
 }
 
-export default function Projects() {
+export default function Projects({
+  heading,
+  projects,
+  viewProjectLabel,
+}: {
+  heading: SectionHeadingContent;
+  projects: Project[];
+  viewProjectLabel: string;
+}) {
   const featured = projects.filter((project) => project.featured);
   const others = projects.filter((project) => !project.featured);
 
@@ -47,9 +64,9 @@ export default function Projects() {
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading
-            eyebrow="Projets"
-            title="La preuve par les projets"
-            description="Des produits pensés, construits et mis en production de bout en bout."
+            eyebrow={heading.eyebrow}
+            title={heading.title}
+            description={heading.description}
           />
         </FadeIn>
 
@@ -100,7 +117,7 @@ export default function Projects() {
                       ))}
                     </ul>
                     <div className="mt-6">
-                      <ProjectLink project={project} />
+                      <ProjectLink project={project} label={viewProjectLabel} />
                     </div>
                   </div>
 
@@ -145,7 +162,7 @@ export default function Projects() {
                     </ul>
                   </div>
                   <div className="shrink-0">
-                    <ProjectLink project={project} />
+                    <ProjectLink project={project} label={viewProjectLabel} />
                   </div>
                 </div>
               </article>

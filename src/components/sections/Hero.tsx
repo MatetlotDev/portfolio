@@ -2,9 +2,19 @@ import Image from "next/image";
 import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/ui/FadeIn";
-import { profile } from "@/data/profile";
+import {
+  profileBase,
+  type HeroContent,
+  type UiStrings,
+} from "@/data/profile";
 
-export default function Hero() {
+export default function Hero({
+  hero,
+  ui,
+}: {
+  hero: HeroContent;
+  ui: UiStrings;
+}) {
   return (
     <section id="top" className="relative">
       {/* Mesh gradient d'arrière-plan, doux et aéré — déborde sur la section suivante */}
@@ -20,23 +30,23 @@ export default function Hero() {
       <div className="relative mx-auto max-w-5xl px-6 pb-24 pt-32 sm:pt-40 lg:pb-28">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_minmax(0,340px)]">
           <FadeIn>
-            <AvailabilityBadge />
+            <AvailabilityBadge label={hero.availability} />
 
             <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-navy sm:text-5xl md:text-6xl">
-              {profile.name}
+              {profileBase.name}
             </h1>
 
             <p className="mt-4 bg-gradient-to-r from-navy-light via-accent to-emerald-500 bg-clip-text text-xl font-semibold text-transparent sm:text-2xl">
-              {profile.title}
+              {hero.title}
             </p>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
-              {profile.intro}
+              {hero.intro}
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Button href="#contact">Me contacter</Button>
-              <Button href={profile.cvPath} variant="secondary" download>
+              <Button href="#contact">{ui.contactCta}</Button>
+              <Button href={profileBase.cvPath} variant="secondary" download>
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
@@ -49,13 +59,13 @@ export default function Hero() {
                 >
                   <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" />
                 </svg>
-                Télécharger mon CV
+                {ui.downloadCv}
               </Button>
             </div>
 
             <dl className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <dt className="sr-only">Localisation</dt>
+                <dt className="sr-only">{ui.metaLocation}</dt>
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
@@ -70,11 +80,11 @@ export default function Hero() {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <dd>
-                  {profile.location} · {profile.workModes}
+                  {hero.location} · {hero.workModes}
                 </dd>
               </div>
               <div className="flex items-center gap-2">
-                <dt className="sr-only">Expérience</dt>
+                <dt className="sr-only">{ui.metaExperience}</dt>
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
@@ -88,10 +98,10 @@ export default function Hero() {
                   <rect x="3" y="7" width="18" height="13" rx="2" />
                   <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
                 </svg>
-                <dd>{profile.yearsOfExperience}</dd>
+                <dd>{hero.yearsOfExperience}</dd>
               </div>
               <div className="flex items-center gap-2">
-                <dt className="sr-only">Langues</dt>
+                <dt className="sr-only">{ui.metaLanguages}</dt>
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
@@ -105,7 +115,7 @@ export default function Hero() {
                   <circle cx="12" cy="12" r="9" />
                   <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
                 </svg>
-                <dd>{profile.languages.join(" · ")}</dd>
+                <dd>{hero.languages.join(" · ")}</dd>
               </div>
             </dl>
           </FadeIn>
@@ -118,8 +128,8 @@ export default function Hero() {
                 className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sky-300/50 via-emerald-300/40 to-teal-200/50 blur-2xl"
               />
               <Image
-                src={profile.photo}
-                alt={profile.photoAlt}
+                src={profileBase.photo}
+                alt={hero.photoAlt}
                 width={1200}
                 height={1800}
                 priority

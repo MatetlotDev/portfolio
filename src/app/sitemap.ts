@@ -1,13 +1,17 @@
 import type { MetadataRoute } from "next";
-import { profile } from "@/data/profile";
+import { profileBase } from "@/data/profile";
+import { defaultLocale, locales } from "@/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: profile.siteUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-  ];
+  const languages = Object.fromEntries(
+    locales.map((locale) => [locale, `${profileBase.siteUrl}/${locale}`])
+  );
+
+  return locales.map((locale) => ({
+    url: `${profileBase.siteUrl}/${locale}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: locale === defaultLocale ? 1 : 0.9,
+    alternates: { languages },
+  }));
 }

@@ -1,11 +1,26 @@
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/ui/FadeIn";
-import { contact, profile } from "@/data/profile";
+import {
+  profileBase,
+  type ContactContent,
+  type HeroContent,
+  type UiStrings,
+} from "@/data/profile";
 
-export default function Contact() {
+export default function Contact({
+  contact,
+  ui,
+  location,
+  workModes,
+}: {
+  contact: ContactContent;
+  ui: UiStrings;
+  location: HeroContent["location"];
+  workModes: HeroContent["workModes"];
+}) {
   const socials = [
-    { label: "LinkedIn", url: profile.social.linkedin },
-    { label: "GitHub", url: profile.social.github },
+    { label: "LinkedIn", url: profileBase.social.linkedin },
+    { label: "GitHub", url: profileBase.social.github },
   ].filter((social) => social.url !== "");
 
   return (
@@ -41,7 +56,7 @@ export default function Contact() {
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <Button
-                  href={`mailto:${profile.email}?subject=${encodeURIComponent("Mission freelance — prise de contact")}`}
+                  href={`mailto:${profileBase.email}?subject=${encodeURIComponent(ui.mailSubject)}`}
                 >
                   <svg
                     aria-hidden="true"
@@ -56,24 +71,24 @@ export default function Contact() {
                     <rect x="3" y="5" width="18" height="14" rx="2" />
                     <path d="m3 7 9 6 9-6" />
                   </svg>
-                  {profile.email}
+                  {profileBase.email}
                 </Button>
                 <a
-                  href={profile.cvPath}
+                  href={profileBase.cvPath}
                   download
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white/70 px-5 py-3 text-sm font-semibold text-navy transition-colors duration-200 hover:border-navy hover:bg-white"
                 >
-                  Télécharger mon CV
+                  {ui.downloadCv}
                 </a>
               </div>
 
               <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-500">
                 <li>
                   <a
-                    href={`tel:${profile.phone}`}
+                    href={`tel:${profileBase.phone}`}
                     className="transition-colors hover:text-navy"
                   >
-                    {profile.phoneDisplay}
+                    {profileBase.phoneDisplay}
                   </a>
                 </li>
                 {socials.map((social) => (
@@ -89,7 +104,7 @@ export default function Contact() {
                   </li>
                 ))}
                 <li>
-                  {profile.location} · {profile.workModes}
+                  {location} · {workModes}
                 </li>
               </ul>
             </div>

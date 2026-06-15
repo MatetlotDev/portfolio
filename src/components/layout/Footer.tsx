@@ -1,21 +1,27 @@
-import { navLinks, profile } from "@/data/profile";
+import { profileBase, type NavLink, type UiStrings } from "@/data/profile";
 
-export default function Footer() {
+export default function Footer({
+  nav,
+  ui,
+}: {
+  nav: NavLink[];
+  ui: UiStrings;
+}) {
   const year = new Date().getFullYear();
   const socials = [
-    { label: "LinkedIn", url: profile.social.linkedin },
-    { label: "GitHub", url: profile.social.github },
+    { label: "LinkedIn", url: profileBase.social.linkedin },
+    { label: "GitHub", url: profileBase.social.github },
   ].filter((social) => social.url !== "");
 
   return (
     <footer className="border-t border-gray-200/80">
       <div className="mx-auto max-w-5xl px-6 py-10">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          <p className="text-sm font-semibold text-navy">{profile.name}</p>
+          <p className="text-sm font-semibold text-navy">{profileBase.name}</p>
 
-          <nav aria-label="Navigation du pied de page">
+          <nav aria-label={ui.footerNav}>
             <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-              {navLinks.map((link) => (
+              {nav.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -47,7 +53,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-8 text-center text-xs text-gray-400">
-          © {year} {profile.name} · Construit avec Next.js
+          © {year} {profileBase.name} · {ui.builtWith}
         </p>
       </div>
     </footer>

@@ -1,8 +1,8 @@
 import FadeIn from "@/components/ui/FadeIn";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { about } from "@/data/profile";
+import type { AboutContent } from "@/data/profile";
 
-export default function About() {
+export default function About({ about }: { about: AboutContent }) {
   return (
     <section id="a-propos" className="relative py-24">
       {/* Écho discret du mesh du hero */}

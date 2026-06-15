@@ -1,9 +1,18 @@
 import FadeIn from "@/components/ui/FadeIn";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Tag from "@/components/ui/Tag";
-import { experiences } from "@/data/profile";
+import type {
+  Experience as ExperienceItem,
+  SectionHeadingContent,
+} from "@/data/profile";
 
-export default function Experience() {
+export default function Experience({
+  heading,
+  experiences,
+}: {
+  heading: SectionHeadingContent;
+  experiences: ExperienceItem[];
+}) {
   return (
     <section id="experiences" className="relative py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
@@ -13,9 +22,9 @@ export default function Experience() {
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading
-            eyebrow="Parcours"
-            title="Expériences"
-            description="SaaS, cartographie interactive, e-commerce : quatre ans à construire des produits web, en équipe comme en autonomie."
+            eyebrow={heading.eyebrow}
+            title={heading.title}
+            description={heading.description}
           />
         </FadeIn>
 

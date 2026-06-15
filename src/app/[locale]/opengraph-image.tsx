@@ -1,11 +1,24 @@
 import { ImageResponse } from "next/og";
-import { profile } from "@/data/profile";
+import { getContent, profileBase } from "@/data/profile";
+import { isLocale, locales, type Locale } from "@/i18n/config";
 
-export const alt = `${profile.name} — ${profile.title}`;
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export const alt = `${profileBase.name} — Front-End Developer`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const safeLocale: Locale = isLocale(locale) ? locale : "fr";
+  const { hero } = getContent(safeLocale);
+
   return new ImageResponse(
     (
       <div
@@ -43,13 +56,13 @@ export default function OpengraphImage() {
             }}
           />
           <div style={{ color: "#a7f3d0", fontSize: "24px", fontWeight: 600 }}>
-            {profile.availability}
+            {hero.availability}
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ color: "#ffffff", fontSize: "72px", fontWeight: 700 }}>
-            {profile.name}
+            {profileBase.name}
           </div>
           <div
             style={{
@@ -59,7 +72,7 @@ export default function OpengraphImage() {
               maxWidth: "900px",
             }}
           >
-            {profile.title}
+            {hero.title}
           </div>
         </div>
 
@@ -72,8 +85,8 @@ export default function OpengraphImage() {
             fontSize: "26px",
           }}
         >
-          <div>{profile.tagline}</div>
-          <div>{`${profile.location} · ${profile.workModes}`}</div>
+          <div>{hero.tagline}</div>
+          <div>{`${hero.location} · ${hero.workModes}`}</div>
         </div>
       </div>
     ),
