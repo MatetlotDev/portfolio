@@ -7,23 +7,8 @@ Single-page statique, optimisée SEO et performance, prête pour Vercel.
 
 - [Next.js](https://nextjs.org) (App Router) + TypeScript strict
 - Tailwind CSS v4
-- Aucune autre dépendance : animations en CSS natif (IntersectionObserver), pas de back-end.
-
-## Lancer en local
-
-```bash
-npm install
-npm run dev
-```
-
-Le site est disponible sur [http://localhost:3000](http://localhost:3000).
-
-Autres commandes :
-
-```bash
-npm run build   # build de production
-npm run lint    # vérification ESLint
-```
+- [`react-icons`](https://react-icons.github.io/react-icons/) (jeu Simple Icons) pour les logos de technos dans les chips — import par icône, donc tree-shaké.
+- Pas d'autre dépendance : animations en CSS natif (IntersectionObserver), pas de back-end.
 
 ## Bilingue (FR / EN)
 
@@ -44,18 +29,9 @@ bouton de bascule dans le header (desktop et mobile).
 - `profileBase` : données non traduisibles (nom, email, téléphone, liens, chemins).
 - `content` : tout le texte traduisible, dans les objets `fr` et `en`. Le type
   `SiteContent` **force la parité** entre les deux langues (une clé manquante = erreur
-  de compilation). Les traductions anglaises à valider sont marquées `[À RELIRE]`.
+  de compilation).
 
 Aucun texte n'est en dur dans les composants — modifier ce fichier suffit.
-
-### Données à compléter (marquées `[À COMPLÉTER]` dans `profile.ts`)
-
-- `siteUrl` : le domaine final une fois déployé (utilisé pour le SEO : canonical, sitemap, Open Graph).
-- `social.linkedin` / `social.github` : les liens sont masqués automatiquement tant que la valeur est `""`.
-- URL du projet Urban Boulder (et Racclimb) : idem, le lien « Voir le projet » apparaît dès que l'URL est renseignée.
-- **CV** : un PDF par langue dans `public/` — `cv-matthias-lechien-fr.pdf` et `cv-matthias-lechien-en.pdf`. Le bouton de téléchargement sert automatiquement le bon selon la langue (champ `cvPath` de chaque locale dans `profile.ts`).
-- Captures de projets : à déposer dans `public/projects/`, puis remplacer le panneau décoratif dans `src/components/sections/Projects.tsx` par un `next/image`.
-- Réalisations chiffrées Famoco : à ajouter dans le tableau `description` de l'expérience Famoco.
 
 ## Structure
 
@@ -84,11 +60,3 @@ src/
 - JSON-LD `ProfilePage` / `Person` localisé
 - `sitemap.xml` (deux langues) et `robots.txt` générés
 - HTML sémantique (un seul `h1`, sections, skip-link, focus visibles)
-
-## Déployer sur Vercel
-
-1. Pousser le repo sur GitHub.
-2. Sur [vercel.com](https://vercel.com), « Add New Project » → importer le repo. Les réglages par défaut (framework Next.js détecté) suffisent.
-3. Une fois le domaine final connu, mettre à jour `siteUrl` dans `src/data/profile.ts` et redéployer.
-
-La page est entièrement statique (prérendue au build) : aucune configuration serveur nécessaire.

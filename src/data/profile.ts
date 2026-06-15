@@ -8,10 +8,6 @@
  *                  Le type `SiteContent` garantit que `fr` et `en`
  *                  ont EXACTEMENT la même structure — une clé
  *                  manquante dans une langue = erreur de compilation.
- *
- *  Pour ajouter/éditer du contenu : modifier les objets `fr` et `en`
- *  ci-dessous. Les passages anglais marqués [À RELIRE] sont une
- *  première traduction à valider.
  * ─────────────────────────────────────────────────────────────
  */
 

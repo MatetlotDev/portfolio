@@ -43,6 +43,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Exclut _next, l'API et tous les fichiers (robots.txt, sitemap.xml, images…)
-  matcher: ["/((?!_next|api|.*\\.).*)"],
+  // Exclut _next, l'API, le favicon généré (/icon) et tous les fichiers
+  // (robots.txt, sitemap.xml, images…) de la redirection de langue.
+  matcher: ["/((?!_next|api|icon|.*\\.).*)"],
 };

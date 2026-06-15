@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { locales, type Locale } from "@/i18n/config";
 
 const ONE_YEAR = 60 * 60 * 24 * 365;
@@ -11,9 +11,9 @@ function persistLocale(locale: Locale) {
 }
 
 /**
- * Bascule FR / EN. Vrais liens (crawlables, ouvrables dans un
- * nouvel onglet). Au clic : mémorise le choix dans un cookie et
- * conserve l'ancre courante (#projets…) pour rester sur la section.
+ * Bascule FR / EN. Vrais liens (crawlables, ouvrables dans un nouvel onglet).
+ * Au clic simple : navigation client avec `scroll: false` pour rester
+ * exactement à la même position dans la page lors du changement de langue.
  */
 export default function LanguageToggle({
   locale,
@@ -23,6 +23,7 @@ export default function LanguageToggle({
   label: string;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
 
   const hrefFor = (next: Locale) =>
     pathname.replace(/^\/(fr|en)(?=\/|$)/, `/${next}`) || `/${next}`;
@@ -35,12 +36,19 @@ export default function LanguageToggle({
       event.preventDefault();
       return;
     }
-    persistLocale(next);
-    const hash = window.location.hash;
-    if (hash) {
-      event.preventDefault();
-      window.location.assign(`${hrefFor(next)}${hash}`);
+    // Laisser le navigateur gérer l'ouverture dans un nouvel onglet.
+    if (
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      event.button !== 0
+    ) {
+      return;
     }
+    event.preventDefault();
+    persistLocale(next);
+    router.push(hrefFor(next), { scroll: false });
   };
 
   return (
