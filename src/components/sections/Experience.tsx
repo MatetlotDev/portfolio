@@ -6,10 +6,10 @@ import { experiences } from "@/data/profile";
 export default function Experience() {
   return (
     <section id="experiences" className="relative py-24">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-18%] top-1/4 -z-10 size-[480px] rounded-full bg-gradient-to-bl from-emerald-100/50 via-teal-50/40 to-transparent blur-3xl"
-      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute right-[-15%] top-1/4 size-[480px] rounded-full bg-gradient-to-bl from-emerald-200/55 via-teal-100/45 to-transparent blur-3xl" />
+        <div className="absolute -left-44 bottom-1/4 size-[420px] rounded-full bg-gradient-to-tr from-indigo-200/45 via-sky-100/40 to-transparent blur-3xl" />
+      </div>
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading

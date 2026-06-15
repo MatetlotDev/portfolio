@@ -6,10 +6,10 @@ import { skillCategories } from "@/data/profile";
 export default function Skills() {
   return (
     <section id="competences" className="relative py-24">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-48 top-1/3 -z-10 size-[460px] rounded-full bg-gradient-to-tr from-sky-100/60 via-blue-50/40 to-transparent blur-3xl"
-      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-48 top-1/4 size-[460px] rounded-full bg-gradient-to-tr from-sky-200/55 via-blue-100/45 to-transparent blur-3xl" />
+        <div className="absolute right-[-12%] bottom-0 size-[400px] rounded-full bg-gradient-to-bl from-emerald-200/50 via-teal-100/40 to-transparent blur-3xl" />
+      </div>
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
           <SectionHeading

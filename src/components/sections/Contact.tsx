@@ -9,33 +9,38 @@ export default function Contact() {
   ].filter((social) => social.url !== "");
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="relative py-24">
+      {/* Formes colorées autour de la carte, dans le style du hero */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-40 top-0 size-[440px] rounded-full bg-gradient-to-tr from-sky-200/55 via-blue-100/40 to-transparent blur-3xl" />
+        <div className="absolute right-[-12%] bottom-0 size-[420px] rounded-full bg-gradient-to-bl from-emerald-200/55 via-teal-100/45 to-transparent blur-3xl" />
+      </div>
+
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn>
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy via-navy-light to-accent-dark px-6 py-16 text-center shadow-lg sm:px-16">
-            {/* Halos lumineux dans la carte */}
+          <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-gradient-to-br from-emerald-50 via-sky-50 to-teal-50 px-6 py-16 text-center shadow-md ring-1 ring-emerald-100/60 sm:px-16">
+            {/* Halos doux à l'intérieur de la carte */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0"
             >
-              <div className="absolute -top-24 right-[-10%] size-80 rounded-full bg-emerald-400/25 blur-3xl" />
-              <div className="absolute bottom-[-30%] left-[-5%] size-72 rounded-full bg-sky-400/20 blur-3xl" />
+              <div className="absolute -top-24 right-[-10%] size-80 rounded-full bg-emerald-300/35 blur-3xl" />
+              <div className="absolute bottom-[-30%] left-[-5%] size-72 rounded-full bg-sky-300/30 blur-3xl" />
             </div>
 
             <div className="relative">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-emerald-300">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">
                 {contact.eyebrow}
               </p>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
                 {contact.title}
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-blue-100">
+              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-600">
                 {contact.text}
               </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <Button
-                  variant="light"
                   href={`mailto:${profile.email}?subject=${encodeURIComponent("Mission freelance — prise de contact")}`}
                 >
                   <svg
@@ -56,17 +61,17 @@ export default function Contact() {
                 <a
                   href={profile.cvPath}
                   download
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white/70 px-5 py-3 text-sm font-semibold text-navy transition-colors duration-200 hover:border-navy hover:bg-white"
                 >
                   Télécharger mon CV
                 </a>
               </div>
 
-              <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-blue-200">
+              <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-500">
                 <li>
                   <a
                     href={`tel:${profile.phone}`}
-                    className="transition-colors hover:text-white"
+                    className="transition-colors hover:text-navy"
                   >
                     {profile.phoneDisplay}
                   </a>
@@ -77,7 +82,7 @@ export default function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium text-emerald-300 transition-colors hover:text-emerald-200"
+                      className="font-medium text-accent transition-colors hover:text-accent-dark"
                     >
                       {social.label}
                     </a>

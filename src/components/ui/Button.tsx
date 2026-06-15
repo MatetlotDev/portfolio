@@ -1,6 +1,6 @@
 interface ButtonProps {
   href: string;
-  variant?: "primary" | "secondary" | "light";
+  variant?: "primary" | "secondary";
   children: React.ReactNode;
   className?: string;
   download?: boolean;
@@ -15,7 +15,6 @@ const variants = {
     "bg-gradient-to-r from-accent to-emerald-500 text-white shadow-sm hover:from-accent-dark hover:to-emerald-600 hover:shadow-md",
   secondary:
     "border border-gray-300 bg-white text-navy hover:border-navy hover:bg-gray-50",
-  light: "bg-white text-navy shadow-sm hover:bg-gray-100 hover:shadow-md",
 };
 
 export default function Button({
