@@ -58,7 +58,7 @@ export default async function Home({
         <Projects
           heading={content.sections.projects}
           projects={content.projects}
-          viewProjectLabel={content.ui.viewProject}
+          visitLabel={content.ui.visitWebsite}
         />
         <Contact
           contact={content.contact}

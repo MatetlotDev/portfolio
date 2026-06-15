@@ -79,6 +79,9 @@ export interface Project {
   description: string;
   highlights: string[];
   stack: string[];
+  /** Capture du projet dans /public. Laisser "" pour masquer le visuel. */
+  image: string;
+  imageAlt: string;
   /** Laisser "" tant que l'URL n'est pas connue : le lien sera masqué automatiquement. */
   url: string;
   featured: boolean;
@@ -119,7 +122,7 @@ export interface HeroContent {
 export interface UiStrings {
   contactCta: string;
   downloadCv: string;
-  viewProject: string;
+  visitWebsite: string;
   skipToContent: string;
   backToTop: string;
   openMenu: string;
@@ -133,6 +136,7 @@ export interface UiStrings {
   metaLanguages: string;
   langSwitch: string;
   mailSubject: string;
+  whatsapp: string;
 }
 
 export interface SiteContent {
@@ -321,7 +325,10 @@ const fr: SiteContent = {
         "Mise en production, acquisition, itérations",
       ],
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-      url: "", // [À COMPLÉTER] URL Urban Boulder + captures dans /public/projects
+      image: "/urban-boulder.png",
+      imageAlt:
+        "Aperçu de la plateforme Urban Boulder : carte interactive des spots d'escalade urbaine",
+      url: "https://urban-boulder.com",
       featured: true,
     },
     {
@@ -331,7 +338,9 @@ const fr: SiteContent = {
         "Marque e-commerce créée et lancée de bout en bout : étude de marché, branding, site Shopify orienté conversion, go-to-market et pilotage de freelances.",
       highlights: [],
       stack: ["Shopify", "E-commerce", "Conversion"],
-      url: "", // [À COMPLÉTER] URL Racclimb
+      image: "/racclimb.png",
+      imageAlt: "Page d'accueil de la boutique e-commerce Racclimb",
+      url: "https://racclimb.com",
       featured: false,
     },
   ],
@@ -365,7 +374,7 @@ const fr: SiteContent = {
   ui: {
     contactCta: "Me contacter",
     downloadCv: "Télécharger mon CV",
-    viewProject: "Voir le projet",
+    visitWebsite: "Visiter le site",
     skipToContent: "Aller au contenu",
     backToTop: "retour en haut de page",
     openMenu: "Ouvrir le menu",
@@ -379,6 +388,7 @@ const fr: SiteContent = {
     metaLanguages: "Langues",
     langSwitch: "Changer de langue",
     mailSubject: "Mission freelance — prise de contact",
+    whatsapp: "Écrire sur WhatsApp",
   },
 };
 
@@ -533,7 +543,10 @@ const en: SiteContent = {
         "Production launch, acquisition, iterations",
       ],
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-      url: "",
+      image: "/urban-boulder.png",
+      imageAlt:
+        "Preview of the Urban Boulder platform: interactive map of urban climbing spots",
+      url: "https://urban-boulder.com",
       featured: true,
     },
     {
@@ -543,7 +556,9 @@ const en: SiteContent = {
         "An e-commerce brand created and launched end to end: market research, branding, a conversion-focused Shopify store, go-to-market and freelancer management.",
       highlights: [],
       stack: ["Shopify", "E-commerce", "Conversion"],
-      url: "",
+      image: "/racclimb.png",
+      imageAlt: "Homepage of the Racclimb e-commerce store",
+      url: "https://racclimb.com",
       featured: false,
     },
   ],
@@ -577,7 +592,7 @@ const en: SiteContent = {
   ui: {
     contactCta: "Get in touch",
     downloadCv: "Download my CV",
-    viewProject: "View project",
+    visitWebsite: "Visit website",
     skipToContent: "Skip to content",
     backToTop: "back to top",
     openMenu: "Open menu",
@@ -591,6 +606,7 @@ const en: SiteContent = {
     metaLanguages: "Languages",
     langSwitch: "Switch language",
     mailSubject: "Freelance engagement — getting in touch",
+    whatsapp: "Message on WhatsApp",
   },
 };
 
