@@ -167,7 +167,7 @@ export const profileBase: ProfileBase = {
   phone: "+32456419626",
   phoneDisplay: "+32 456 41 96 26",
   cvPath: "/cv-matthias-lechien.pdf",
-  siteUrl: "https://matthias-lechien.vercel.app", // [À COMPLÉTER] domaine final
+  siteUrl: "https://matthias-lechien.dev",
   social: {
     linkedin: "https://www.linkedin.com/in/matthias-lechien-ab44ba229",
     github: "https://github.com/MatetlotDev",
@@ -182,9 +182,8 @@ const fr: SiteContent = {
     title: "Développeur Front-End Freelance — React / Next.js / TypeScript",
     tagline: "Le front-end qui pense produit.",
     intro:
-      "Le front-end qui pense produit : je conçois et développe des interfaces web modernes — React, Next.js, TypeScript — du besoin utilisateur jusqu'à la mise en production.",
-    photoAlt:
-      "Portrait de Matthias Lechien, développeur front-end freelance",
+      "4 ans+ d'expérience sur des dashboards data et des interfaces SaaS en React, Next.js et TypeScript. Je construis des produits de l'idée à la mise en production — discovery, UX, code, lancement — avec l'IA au cœur de mon workflow.",
+    photoAlt: "Portrait de Matthias Lechien, développeur front-end freelance",
     availability: "Disponible immédiatement",
     location: "Bruxelles, Belgique",
     workModes: "Remote · Hybride · Sur site",
@@ -239,6 +238,7 @@ const fr: SiteContent = {
       title: "Front-end",
       skills: [
         "React",
+        "Redux",
         "Next.js",
         "TypeScript",
         "JavaScript (ES6+)",
@@ -258,6 +258,9 @@ const fr: SiteContent = {
         "Node.js",
         "Shopify",
         "Leaflet",
+        "Supabase",
+        "MongoDB",
+        "Docker",
       ],
     },
     {
@@ -276,40 +279,62 @@ const fr: SiteContent = {
   ],
   experiences: [
     {
-      role: "Développeur Front-End",
-      company: "Famoco",
-      period: "Mars 2022 – Mars 2026",
-      context: "Scale-up tech internationale · Remote",
-      description: [
-        "Développement et évolution d'applications web SaaS en React et TypeScript, au sein d'une équipe agile internationale (devs, PM, designers).",
-        "Conception d'une application mobile from scratch : étude du besoin, maquettes Figma, développement React Native / Expo.",
-        "Participation à la définition des besoins fonctionnels, revue de code, CI/CD.",
-        // [À COMPLÉTER] ajouter ici 1-2 réalisations chiffrées (nb d'utilisateurs, taille d'équipe, impact)
-      ],
-      stack: ["React", "TypeScript", "React Native", "Expo", "Figma"],
-    },
-    {
       role: "Développeur JavaScript",
       company: "Kodama Px",
       period: "Avril 2026 – Mai 2026",
-      context: "Mission freelance",
+      context: "Mission freelance · Remote",
       description: [
-        "Développement d'une plateforme cartographique interactive : filtres dynamiques, système multi-dates, formulaires front-end avancés.",
-        "Conception d'interfaces UI/UX responsives.",
+        "Développement d'une plateforme cartographique interactive (JavaScript, Leaflet) : affichage dynamique d'activités sur carte, filtres multi-critères et système multi-dates interactif.",
+        "Création de formulaires front-end avancés et de composants UI/UX responsives personnalisés (base WordPress custom).",
+        "Livraison autonome et rapide d'une fonctionnalité complète, de la conception à la mise en production.",
       ],
-      stack: ["JavaScript", "Leaflet"],
+      stack: ["JavaScript", "Leaflet", "Wordpress", "PHP"],
     },
     {
       role: "Fondateur — Produit & Développement",
       company: "Racclimb",
       period: "Depuis janvier 2025",
-      context: "Activité complémentaire",
+      context: "Activité complémentaire · Remote",
       description: [
-        "Création et lancement d'une marque e-commerce de bout en bout : étude de marché, branding, go-to-market.",
-        "Conception et développement du site Shopify, orienté conversion.",
-        "Roadmap, priorisation centrée utilisateur, pilotage de freelances.",
+        "Création et lancement d'une marque e-commerce de bout en bout : étude de marché, positionnement, identité de marque et stratégie go-to-market.",
+        "Conception et développement du site e-commerce (Shopify), avec un focus sur l'expérience utilisateur et le taux de conversion.",
+        "Définition et pilotage de la roadmap produit : priorisation centrée utilisateur sous contraintes business réelles, puis itérations.",
+        "Pilotage de freelances externes pour déléguer et optimiser les opérations",
       ],
-      stack: ["Shopify", "Branding", "Go-to-market"],
+      stack: [
+        "Javascript",
+        "Shopify",
+        "Liquid",
+        "Branding",
+        "HTML/CSS",
+        "Meta/Google Ads",
+        "Figma",
+        "Klaviyo",
+      ],
+    },
+    {
+      role: "Développeur Front-End",
+      company: "Famoco",
+      period: "Mars 2022 – Mars 2026",
+      context: "Scale-up tech internationale · Remote",
+      description: [
+        "Développement et évolution d'interfaces web en React / TypeScript dans un environnement SaaS international.",
+        "Conception de composants réutilisables et maintenables, dans le respect des standards de performance et d'accessibilité.",
+        "Participation aux choix techniques et à l'amélioration continue de l'architecture front-end.",
+        "Rôle de Scrum Master : animation des rituels agiles, planification des sprints et mise en place d'un fonctionnement plus fluide entre Design, Product et Développement — permettant à l'équipe de livrer ses features ~40 % plus vite.",
+        "Collaboration étroite avec Product, Design et Back-End en Agile / Scrum ; revue de code, gestion de versions Git et contribution aux pipelines CI/CD.",
+      ],
+      stack: [
+        "React",
+        "TypeScript",
+        "Redux",
+        "Chart.js",
+        "Figma",
+        "Leaflet",
+        "Jira",
+        "Mui",
+        "Vite",
+      ],
     },
   ],
   projects: [
@@ -318,13 +343,13 @@ const fr: SiteContent = {
       label: "Projet phare",
       status: "Lancement juin 2026",
       description:
-        "Plateforme web dédiée à l'escalade urbaine, conçue et développée de bout en bout — la preuve par l'exemple de ma capacité à construire un produit complet, pas juste à coder des écrans.",
+        "Plateforme web dédiée à l'escalade urbaine, pour créer et découvrir des spots d'escalades autour de  chez sois. Conçue et développée de bout en bout.",
       highlights: [
         "Discovery utilisateur, UX/UI et prototypage",
         "Développement Next.js / TypeScript",
         "Mise en production, acquisition, itérations",
       ],
-      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
       image: "/urban-boulder.png",
       imageAlt:
         "Aperçu de la plateforme Urban Boulder : carte interactive des spots d'escalade urbaine",
@@ -393,15 +418,14 @@ const fr: SiteContent = {
 };
 
 /* ──────────────────────────── Contenu EN ──────────────────────────── */
-/* Première traduction — passages sensibles marqués [À RELIRE]. */
 
 const en: SiteContent = {
   jobTitle: "Freelance Front-End Developer",
   hero: {
     title: "Freelance Front-End Developer — React / Next.js / TypeScript",
-    tagline: "Front-end that thinks product.", // [À RELIRE]
+    tagline: "Front-end that thinks product.",
     intro:
-      "Front-end that thinks product: I design and build modern web interfaces — React, Next.js, TypeScript — from user needs all the way to production.", // [À RELIRE]
+      "4+ years of experience building data dashboards and SaaS interfaces with React, Next.js, and TypeScript. I build products from idea to production — discovery, UX, development, and launch — with AI at the core of my workflow.",
     photoAlt: "Portrait of Matthias Lechien, freelance front-end developer",
     availability: "Available now",
     location: "Brussels, Belgium",
@@ -457,6 +481,7 @@ const en: SiteContent = {
       title: "Front-end",
       skills: [
         "React",
+        "Redux",
         "Next.js",
         "TypeScript",
         "JavaScript (ES6+)",
@@ -476,6 +501,9 @@ const en: SiteContent = {
         "Node.js",
         "Shopify",
         "Leaflet",
+        "Supabase",
+        "MongoDB",
+        "Docker",
       ],
     },
     {
@@ -494,28 +522,16 @@ const en: SiteContent = {
   ],
   experiences: [
     {
-      role: "Front-End Developer",
-      company: "Famoco",
-      period: "March 2022 – March 2026",
-      context: "International tech scale-up · Remote",
-      description: [
-        "Built and evolved SaaS web applications in React and TypeScript, within an international agile team (devs, PMs, designers).",
-        "Designed a mobile app from scratch: needs analysis, Figma mockups, React Native / Expo development.",
-        "Contributed to defining functional requirements, code review, CI/CD.",
-        // [À COMPLÉTER] ajouter ici 1-2 réalisations chiffrées
-      ],
-      stack: ["React", "TypeScript", "React Native", "Expo", "Figma"],
-    },
-    {
       role: "JavaScript Developer",
       company: "Kodama Px",
       period: "April 2026 – May 2026",
       context: "Freelance engagement",
       description: [
-        "Built an interactive mapping platform: dynamic filters, multi-date system, advanced front-end forms.",
-        "Designed responsive UI/UX interfaces.",
+        "Built an interactive mapping platform (JavaScript, Leaflet): dynamic display of activities on a map, multi-criteria filters and an interactive multi-date system.",
+        "Created advanced front-end forms and custom responsive UI/UX components (custom WordPress base).",
+        "Delivered a complete feature independently and quickly, from design to production.",
       ],
-      stack: ["JavaScript", "Leaflet"],
+      stack: ["JavaScript", "Leaflet", "Wordpress", "PHP"],
     },
     {
       role: "Founder — Product & Development",
@@ -523,11 +539,44 @@ const en: SiteContent = {
       period: "Since January 2025",
       context: "Side venture",
       description: [
-        "Created and launched an e-commerce brand end to end: market research, branding, go-to-market.",
-        "Designed and built the Shopify store, conversion-focused.",
-        "Roadmap, user-centered prioritization, managing freelancers.",
+        "Created and launched an e-commerce brand end-to-end: market research, positioning, brand identity and goto-market strategy.",
+        "Designed and developed the e-commerce site (Shopify), focused on user experience and conversion rate.",
+        "Defined and managed the product roadmap: user-centered prioritization under real business constraints, then iterations.",
+        "Managed external freelancers to delegate and optimize operations.",
       ],
-      stack: ["Shopify", "Branding", "Go-to-market"],
+      stack: [
+        "Javascript",
+        "Shopify",
+        "Liquid",
+        "HTML/CSS",
+        "Meta/Google Ads",
+        "Figma",
+        "Klaviyo",
+      ],
+    },
+    {
+      role: "Front-End Developer",
+      company: "Famoco",
+      period: "March 2022 – March 2026",
+      context: "International tech scale-up · Remote",
+      description: [
+        "Developed and evolved web interfaces in React / TypeScript within an international SaaS environment.",
+        "Designed reusable, maintainable components, meeting performance and accessibility standards.",
+        "Contributed to technical decisions and to the continuous improvement of the front-end architecture.",
+        "Scrum Master role: facilitated agile ceremonies, planned sprints and set up a smoother workflow between Design, Product and Development enabling the team to ship features ~40% faster.",
+        "Worked closely with Product, Design and Back-End in Agile / Scrum; code review, version control with Git and contribution to CI/CD pipelines.",
+      ],
+      stack: [
+        "React",
+        "TypeScript",
+        "Mui",
+        "Redux",
+        "Chart.js",
+        "Leaflet",
+        "Figma",
+        "Jira",
+        "Vite",
+      ],
     },
   ],
   projects: [
@@ -536,13 +585,13 @@ const en: SiteContent = {
       label: "Flagship project",
       status: "Launching June 2026",
       description:
-        "A web platform for urban climbing, designed and built end to end — living proof of my ability to build a complete product, not just code screens.",
+        "A web platform dedicated to urban climbing, allowing users to discover and share climbing spots near them. Designed and developed end-to-end, from concept and UX to development and deployment.",
       highlights: [
         "User discovery, UX/UI and prototyping",
         "Next.js / TypeScript development",
         "Production launch, acquisition, iterations",
       ],
-      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
       image: "/urban-boulder.png",
       imageAlt:
         "Preview of the Urban Boulder platform: interactive map of urban climbing spots",
