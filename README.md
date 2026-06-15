@@ -53,7 +53,7 @@ Aucun texte n'est en dur dans les composants — modifier ce fichier suffit.
 - `siteUrl` : le domaine final une fois déployé (utilisé pour le SEO : canonical, sitemap, Open Graph).
 - `social.linkedin` / `social.github` : les liens sont masqués automatiquement tant que la valeur est `""`.
 - URL du projet Urban Boulder (et Racclimb) : idem, le lien « Voir le projet » apparaît dès que l'URL est renseignée.
-- **CV** : déposer le PDF dans `public/cv-matthias-lechien.pdf` (le bouton de téléchargement pointe déjà dessus).
+- **CV** : un PDF par langue dans `public/` — `cv-matthias-lechien-fr.pdf` et `cv-matthias-lechien-en.pdf`. Le bouton de téléchargement sert automatiquement le bon selon la langue (champ `cvPath` de chaque locale dans `profile.ts`).
 - Captures de projets : à déposer dans `public/projects/`, puis remplacer le panneau décoratif dans `src/components/sections/Projects.tsx` par un `next/image`.
 - Réalisations chiffrées Famoco : à ajouter dans le tableau `description` de l'expérience Famoco.
 

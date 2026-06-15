@@ -12,11 +12,13 @@ export default function Contact({
   ui,
   location,
   workModes,
+  cvPath,
 }: {
   contact: ContactContent;
   ui: UiStrings;
   location: HeroContent["location"];
   workModes: HeroContent["workModes"];
+  cvPath: string;
 }) {
   const socials = [
     { label: "LinkedIn", url: profileBase.social.linkedin },
@@ -74,7 +76,7 @@ export default function Contact({
                   {profileBase.email}
                 </Button>
                 <a
-                  href={profileBase.cvPath}
+                  href={cvPath}
                   download
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white/70 px-5 py-3 text-sm font-semibold text-navy transition-colors duration-200 hover:border-navy hover:bg-white"
                 >

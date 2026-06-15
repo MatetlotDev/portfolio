@@ -33,9 +33,6 @@ export interface ProfileBase {
   email: string;
   phone: string;
   phoneDisplay: string;
-  /** Chemin du CV dans /public — déposer le PDF à cet emplacement. */
-  cvPath: string;
-  /** [À COMPLÉTER] — remplacer par le domaine final une fois déployé. */
   siteUrl: string;
   social: SocialLinks;
 }
@@ -142,6 +139,8 @@ export interface UiStrings {
 export interface SiteContent {
   /** Métier court pour les données structurées (schema.org Person.jobTitle). */
   jobTitle: string;
+  /** Chemin du CV dans /public, propre à la langue. */
+  cvPath: string;
   hero: HeroContent;
   about: AboutContent;
   sections: {
@@ -166,7 +165,6 @@ export const profileBase: ProfileBase = {
   email: "matthias.lechien@gmail.com",
   phone: "+32456419626",
   phoneDisplay: "+32 456 41 96 26",
-  cvPath: "/cv-matthias-lechien.pdf",
   siteUrl: "https://matthias-lechien.dev",
   social: {
     linkedin: "https://www.linkedin.com/in/matthias-lechien-ab44ba229",
@@ -178,6 +176,7 @@ export const profileBase: ProfileBase = {
 
 const fr: SiteContent = {
   jobTitle: "Développeur Front-End Freelance",
+  cvPath: "/cv-matthias-lechien-fr.pdf",
   hero: {
     title: "Développeur Front-End Freelance — React / Next.js / TypeScript",
     tagline: "Le front-end qui pense produit.",
@@ -421,6 +420,7 @@ const fr: SiteContent = {
 
 const en: SiteContent = {
   jobTitle: "Freelance Front-End Developer",
+  cvPath: "/cv-matthias-lechien-en.pdf",
   hero: {
     title: "Freelance Front-End Developer — React / Next.js / TypeScript",
     tagline: "Front-end that thinks product.",

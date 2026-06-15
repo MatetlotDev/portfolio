@@ -45,7 +45,7 @@ export default async function Home({
       <Header nav={content.navLinks} ui={content.ui} locale={locale} />
       <MouseGlow />
       <main className="flex-1 overflow-x-clip">
-        <Hero hero={content.hero} ui={content.ui} />
+        <Hero hero={content.hero} ui={content.ui} cvPath={content.cvPath} />
         <About about={content.about} />
         <Skills
           heading={content.sections.skills}
@@ -65,6 +65,7 @@ export default async function Home({
           ui={content.ui}
           location={content.hero.location}
           workModes={content.hero.workModes}
+          cvPath={content.cvPath}
         />
       </main>
       <Footer nav={content.navLinks} ui={content.ui} />

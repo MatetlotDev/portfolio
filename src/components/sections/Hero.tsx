@@ -11,9 +11,11 @@ import {
 export default function Hero({
   hero,
   ui,
+  cvPath,
 }: {
   hero: HeroContent;
   ui: UiStrings;
+  cvPath: string;
 }) {
   const socials = [
     {
@@ -77,7 +79,7 @@ export default function Hero({
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button href="#contact">{ui.contactCta}</Button>
-              <Button href={profileBase.cvPath} variant="secondary" download>
+              <Button href={cvPath} variant="secondary" download>
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
