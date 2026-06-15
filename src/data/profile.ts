@@ -169,8 +169,8 @@ export const profileBase: ProfileBase = {
   cvPath: "/cv-matthias-lechien.pdf",
   siteUrl: "https://matthias-lechien.vercel.app", // [À COMPLÉTER] domaine final
   social: {
-    linkedin: "", // [À COMPLÉTER] URL LinkedIn
-    github: "", // [À COMPLÉTER] URL GitHub
+    linkedin: "https://www.linkedin.com/in/matthias-lechien-ab44ba229",
+    github: "https://github.com/MatetlotDev",
   },
 };
 
