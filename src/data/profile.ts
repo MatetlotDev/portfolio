@@ -363,6 +363,18 @@ const fr: SiteContent = {
       url: "https://racclimb.com",
       featured: false,
     },
+    {
+      name: "Claes Design",
+      label: "Design web",
+      description:
+        "Le portfolio d'un studio belge indépendant de design industriel, présenté sous la forme d'un site au style « primé » qui laisse les produits parler d'eux-mêmes.",
+      highlights: [],
+      stack: ["Astro", "Python", "Typescript", "Tailwind CSS"],
+      image: "/claeys.png",
+      imageAlt: "Page d'accueil du portfolio de Claeys Design",
+      url: "https://claeys-design-test.vercel.app/",
+      featured: false,
+    },
   ],
   contact: {
     eyebrow: "Contact",
@@ -604,6 +616,18 @@ const en: SiteContent = {
       image: "/racclimb.png",
       imageAlt: "Homepage of the Racclimb e-commerce store",
       url: "https://racclimb.com",
+      featured: false,
+    },
+    {
+      name: "Claes Design",
+      label: "Web design",
+      description:
+        "The portfolio of an independent Belgian industrial design studio, presented as an award-style site that lets the product work speak for itself.",
+      highlights: [],
+      stack: ["Astro", "Python", "Typescript", "Tailwind CSS"],
+      image: "/claeys.png",
+      imageAlt: "Homepage of portfolio of claeys design",
+      url: "https://claeys-design-test.vercel.app/",
       featured: false,
     },
   ],

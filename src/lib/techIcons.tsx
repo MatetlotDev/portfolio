@@ -24,6 +24,9 @@ import {
   SiTypescript,
   SiVite,
   SiWordpress,
+  SiPython,
+  SiAstro,
+  SiMeta
 } from "react-icons/si";
 
 /**
@@ -57,6 +60,9 @@ const matchers: [keyword: string, icon: IconType][] = [
   ["wordpress", SiWordpress],
   ["php", SiPhp],
   ["vite", SiVite],
+  ["astro", SiAstro],
+  ["python", SiPython],
+  ["meta", SiMeta]
 ];
 
 export function getTechIcon(label: string): ReactNode | null {
