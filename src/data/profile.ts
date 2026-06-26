@@ -348,7 +348,7 @@ const fr: SiteContent = {
       image: "/urban-boulder.png",
       imageAlt:
         "Aperçu de la plateforme Urban Boulder : carte interactive des spots d'escalade urbaine",
-      url: "https://urban-boulder.vercel.app",
+      url: "https://urban-boulder.app",
       featured: true,
     },
     {
@@ -603,7 +603,7 @@ const en: SiteContent = {
       image: "/urban-boulder.png",
       imageAlt:
         "Preview of the Urban Boulder platform: interactive map of urban climbing spots",
-      url: "https://urban-boulder.vercel.app",
+      url: "https://urban-boulder.app",
       featured: true,
     },
     {
