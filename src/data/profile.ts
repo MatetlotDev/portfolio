@@ -171,14 +171,14 @@ export const profileBase: ProfileBase = {
 /* ──────────────────────────── Contenu FR ──────────────────────────── */
 
 const fr: SiteContent = {
-  jobTitle: "Développeur Front-End Freelance",
+  jobTitle: "Développeur Full-stack Freelance",
   cvPath: "/cv-matthias-lechien-fr.pdf",
   hero: {
-    title: "Développeur Front-End Freelance — React / Next.js / TypeScript",
-    tagline: "Le front-end qui pense produit.",
+    title: "Développeur Full-stack Freelance — React / Next.js / Node",
+    tagline: "Développeur Full-stack Freelance",
     intro:
       "4 ans+ d'expérience sur des dashboards data et des interfaces SaaS en React, Next.js et TypeScript. Je construis des produits de l'idée à la mise en production — discovery, UX, code, lancement — avec l'IA au cœur de mon workflow.",
-    photoAlt: "Portrait de Matthias Lechien, développeur front-end freelance",
+    photoAlt: "Portrait de Matthias Lechien, développeur full-stack freelance",
     availability: "Disponible immédiatement",
     location: "Bruxelles, Belgique",
     workModes: "Remote · Hybride · Sur site",
@@ -645,14 +645,14 @@ const en: SiteContent = {
   ],
   seo: {
     titleDefault:
-      "Matthias Lechien — Freelance Front-End Developer React / Next.js in Brussels",
+      "Matthias Lechien — Freelance Full-stack Developer React / Next.js / Node in Brussels",
     titleTemplate: "%s — Matthias Lechien",
     description:
-      "Freelance front-end developer in Brussels — React, Next.js, TypeScript. 4 years of experience on SaaS products, dashboards and internal tools, with a product mindset. Available now, remote, hybrid or on-site.",
+      "Freelance full-stack developer in Brussels — React, Next.js, Node. 4 years of experience on SaaS products, dashboards and internal tools, with a product mindset. Available now, remote, hybrid or on-site.",
     keywords: [
       "freelance React developer Belgium",
       "Next.js developer Brussels",
-      "freelance front-end developer",
+      "freelance full-stack developer",
       "React TypeScript freelancer",
       "web developer Brussels",
       "freelance Next.js Belgium",
