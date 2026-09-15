@@ -1,6 +1,6 @@
 export const site = {
   name: "Matthias Lechien",
-  positioning: "Solo entrepreneur - Product builder",
+  positioning: "Solo entrepreneur & Product builder",
   introduction:
     "I build digital products, websites and e-commerce experiences — from the first idea to the final product.",
   availability: "Available for freelance",
