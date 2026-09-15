@@ -1,0 +1,374 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Matthias Portfolio Design System",
+  "version": "1.0.0",
+  "purpose": "Simple, friendly and professional personal portfolio focused on services, projects and experience. Designed to be easy to maintain and extend.",
+  "design_principles": [
+    "Simple over spectacular",
+    "Friendly without looking childish",
+    "Personal rather than agency-like",
+    "Projects are the proof; services are the offer",
+    "Minimal visual system so new projects can be added quickly",
+    "Animation should support hierarchy, not become the product"
+  ],
+  "brand": {
+    "tone": [
+      "friendly",
+      "confident",
+      "direct",
+      "curious",
+      "approachable"
+    ],
+    "positioning": "Product-minded frontend developer who helps turn ideas into useful web products."
+  },
+  "colors": {
+    "primary": {
+      "name": "Ink",
+      "hex": "#18201D",
+      "usage": "Main text, headings, strong UI elements"
+    },
+    "background": {
+      "name": "Warm White",
+      "hex": "#FFFDF8",
+      "usage": "Main page background"
+    },
+    "surface": {
+      "name": "Soft Cream",
+      "hex": "#F5F1E8",
+      "usage": "Cards, secondary sections, subtle containers"
+    },
+    "accent": {
+      "name": "Fresh Green",
+      "hex": "#38B27A",
+      "usage": "Primary accent, links, active states, availability"
+    },
+    "accent_secondary": {
+      "name": "Sunny Yellow",
+      "hex": "#FFC857",
+      "usage": "Small highlights, badges, playful details"
+    },
+    "accent_warm": {
+      "name": "Coral",
+      "hex": "#FF796D",
+      "usage": "Secondary highlights, tags, hover details"
+    },
+    "accent_cool": {
+      "name": "Sky Blue",
+      "hex": "#65B7E8",
+      "usage": "Optional category color and illustrations"
+    },
+    "muted": {
+      "name": "Muted Text",
+      "hex": "#68736E",
+      "usage": "Descriptions, metadata, secondary information"
+    },
+    "border": {
+      "name": "Soft Border",
+      "hex": "#DDE2DC",
+      "usage": "Cards, dividers, inputs"
+    },
+    "white": {
+      "name": "White",
+      "hex": "#FFFFFF",
+      "usage": "Card interiors and contrast surfaces"
+    },
+    "semantic": {
+      "success": "#38B27A",
+      "warning": "#FFC857",
+      "error": "#E85D5A",
+      "info": "#65B7E8"
+    },
+    "rules": [
+      "Use Ink and Warm White as the visual foundation.",
+      "Use one accent color per component whenever possible.",
+      "Keep Coral, Yellow and Blue for small moments rather than large backgrounds.",
+      "Avoid gradients as a default visual treatment.",
+      "Do not introduce a new color for each project; projects can use small accent variations."
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "primary": "DM Sans",
+      "fallback": [
+        "Inter",
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif"
+      ],
+      "mono": [
+        "JetBrains Mono",
+        "SFMono-Regular",
+        "Consolas",
+        "monospace"
+      ]
+    },
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "scale": {
+      "display": {
+        "size": "clamp(3rem, 7vw, 6.5rem)",
+        "line_height": 0.95,
+        "weight": 700,
+        "letter_spacing": "-0.055em"
+      },
+      "h1": {
+        "size": "clamp(2.5rem, 5vw, 4.5rem)",
+        "line_height": 1,
+        "weight": 700,
+        "letter_spacing": "-0.045em"
+      },
+      "h2": {
+        "size": "clamp(2rem, 3.5vw, 3rem)",
+        "line_height": 1.05,
+        "weight": 700,
+        "letter_spacing": "-0.035em"
+      },
+      "h3": {
+        "size": "1.5rem",
+        "line_height": 1.2,
+        "weight": 600,
+        "letter_spacing": "-0.02em"
+      },
+      "body_large": {
+        "size": "1.2rem",
+        "line_height": 1.55,
+        "weight": 400
+      },
+      "body": {
+        "size": "1rem",
+        "line_height": 1.55,
+        "weight": 400
+      },
+      "small": {
+        "size": "0.875rem",
+        "line_height": 1.45,
+        "weight": 500
+      },
+      "label": {
+        "size": "0.75rem",
+        "line_height": 1.2,
+        "weight": 600,
+        "letter_spacing": "0.04em",
+        "text_transform": "uppercase"
+      }
+    }
+  },
+  "layout": {
+    "max_width": "1120px",
+    "wide_max_width": "1280px",
+    "page_padding": {
+      "desktop": "32px",
+      "tablet": "24px",
+      "mobile": "20px"
+    },
+    "section_spacing": {
+      "desktop": "128px",
+      "tablet": "96px",
+      "mobile": "72px"
+    },
+    "grid": {
+      "columns_desktop": 12,
+      "gap": "24px",
+      "mobile_columns": 1,
+      "mobile_gap": "16px"
+    }
+  },
+  "spacing": {
+    "unit": "4px",
+    "scale": {
+      "1": "4px",
+      "2": "8px",
+      "3": "12px",
+      "4": "16px",
+      "5": "20px",
+      "6": "24px",
+      "8": "32px",
+      "10": "40px",
+      "12": "48px",
+      "16": "64px",
+      "20": "80px",
+      "24": "96px",
+      "32": "128px"
+    }
+  },
+  "radius": {
+    "none": "0px",
+    "small": "8px",
+    "medium": "14px",
+    "large": "20px",
+    "pill": "999px",
+    "rule": "Prefer small-to-medium radii. Avoid making every element heavily rounded."
+  },
+  "borders": {
+    "default": "1px solid #DDE2DC",
+    "strong": "1px solid #18201D",
+    "subtle": "1px solid rgba(24, 32, 29, 0.08)"
+  },
+  "shadows": {
+    "none": "none",
+    "small": "0 2px 8px rgba(24, 32, 29, 0.06)",
+    "medium": "0 8px 24px rgba(24, 32, 29, 0.08)",
+    "rule": "Use shadows sparingly. Prefer borders and contrast for most cards."
+  },
+  "components": {
+    "project_card": {
+      "style": "Visual-first project tile with image/preview, title, short description and compact metadata.",
+      "background": "#F5F1E8",
+      "border": "none",
+      "radius": "20px",
+      "padding": "24px",
+      "hover": "Translate Y -3px, slightly increase image scale, reveal one small accent detail.",
+      "content": [
+        "project image",
+        "project name",
+        "one-line description",
+        "technology or role tags",
+        "optional external link"
+      ]
+    },
+    "service_card": {
+      "style": "Clear service offer with a short outcome-oriented description.",
+      "background": "#FFFFFF",
+      "border": "1px solid #DDE2DC",
+      "radius": "14px",
+      "padding": "24px"
+    },
+    "tag": {
+      "style": "Compact pill used for technologies, categories and availability.",
+      "radius": "999px",
+      "padding": "6px 10px",
+      "font": "small",
+      "background": "#F5F1E8"
+    },
+    "button_primary": {
+      "background": "#18201D",
+      "text": "#FFFDF8",
+      "radius": "999px",
+      "padding": "12px 18px",
+      "hover": "Background becomes #38B27A and text remains #18201D."
+    },
+    "button_secondary": {
+      "background": "transparent",
+      "text": "#18201D",
+      "border": "1px solid #DDE2DC",
+      "radius": "999px",
+      "padding": "12px 18px"
+    },
+    "link": {
+      "color": "#18201D",
+      "hover": "#38B27A",
+      "decoration": "Subtle underline or animated underline on hover."
+    },
+    "divider": {
+      "color": "#DDE2DC",
+      "height": "1px"
+    }
+  },
+  "imagery": {
+    "direction": "Real project screenshots and product imagery first. Avoid generic stock photography.",
+    "treatment": [
+      "Clean crops",
+      "Soft warm backgrounds when needed",
+      "Consistent aspect ratios",
+      "Minimal decorative overlays"
+    ],
+    "project_image_ratio": "16:10",
+    "profile_image_ratio": "1:1"
+  },
+  "motion": {
+    "principle": "Subtle, purposeful and easy to maintain.",
+    "duration": {
+      "fast": "160ms",
+      "normal": "280ms",
+      "slow": "500ms"
+    },
+    "easing": {
+      "default": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "linear": "linear"
+    },
+    "allowed": [
+      "fade and slide reveals",
+      "small card lift on hover",
+      "image scale 1.00 to 1.03",
+      "underline animations",
+      "staggered section reveals"
+    ],
+    "avoid": [
+      "large scroll-jacking sequences",
+      "complex 3D scenes",
+      "animations required to understand content",
+      "long cinematic intro animations"
+    ]
+  },
+  "responsive": {
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    },
+    "rules": [
+      "Mobile layout is the same content hierarchy, not a separate experience.",
+      "Project cards become one column on mobile.",
+      "Typography scales down through CSS clamp.",
+      "Avoid horizontal overflow and complex interactions on touch devices."
+    ]
+  },
+  "content_model": {
+    "project": {
+      "required": [
+        "title",
+        "description",
+        "image",
+        "role"
+      ],
+      "optional": [
+        "url",
+        "year",
+        "technologies",
+        "status",
+        "category"
+      ]
+    },
+    "service": {
+      "required": [
+        "title",
+        "description"
+      ],
+      "optional": [
+        "technologies",
+        "starting_price",
+        "cta"
+      ]
+    }
+  },
+  "site_structure": {
+    "hero": "Who I am + what I do + primary contact CTA",
+    "services": "Small set of concrete freelance services",
+    "projects": "Simple project showcase cards",
+    "experience": "Compact timeline or selected experience",
+    "about": "Short personal context and working style",
+    "contact": "Clear invitation to start a project",
+    "footer": "Email + LinkedIn + GitHub + location/availability"
+  },
+  "implementation": {
+    "css_variables_prefix": "--portfolio-",
+    "recommended_stack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "maintenance_rules": [
+      "Projects must be data-driven rather than hardcoded into layouts.",
+      "Use reusable ProjectCard and ServiceCard components.",
+      "Keep colors and typography centralized as design tokens.",
+      "Avoid one-off styling unless it creates real value.",
+      "Prefer CSS transitions for simple interactions; use Framer Motion only when needed."
+    ]
+  }
+}
