@@ -1,7 +1,8 @@
-import type { Service } from "@/data/services";
-
 type ServiceCardProps = {
-  service: Service;
+  service: {
+    title: string;
+    description: string;
+  };
 };
 
 export function ServiceCard({ service }: ServiceCardProps) {

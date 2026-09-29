@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "name": "Matthias Lechien"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "primaryNav": "Primary",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "illustrationAlt": "{name} illustration",
+    "screenshotAlt": "{title} screenshot",
+    "projectImage": "Project image",
+    "languageNames": {
+      "fr": "Français",
+      "en": "English"
+    }
+  },
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "contact": "Contact",
+    "locales": {
+      "fr": "FR",
+      "en": "EN"
+    }
+  },
+  "hero": {
+    "availability": "Available for freelance",
+    "positioning": "Solo entrepreneur & Product builder",
+    "introduction": "I build digital products, websites and e-commerce experiences — from the first idea to the final product.",
+    "cta": "Let's work together"
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      {
+        "id": "web",
+        "title": "Web development",
+        "description": "Websites & web apps built to fit your needs. React, Next.js, Vue, WordPress — from a simple website to a more complex web application."
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-commerce",
+        "description": "Build, improve or maintain your online store. Shopify and custom e-commerce solutions, from setup and development to improvements and integrations."
+      },
+      {
+        "id": "mvp",
+        "title": "MVP & product development",
+        "description": "Turn an idea into a working product. I help shape, build and launch web-based MVPs, from the first idea to a usable product."
+      }
+    ]
+  },
+  "work": {
+    "title": "Work",
+    "items": [
+      {
+        "id": "urban-boulder",
+        "title": "Urban Boulder",
+        "subTitle": "The #1 app for urban buildering.",
+        "description": "Find boulders, create, log, share beta and find communities.",
+        "role": "Founder"
+      },
+      {
+        "id": "wikly-food",
+        "title": "Wikly Food",
+        "subTitle": "Still in construction",
+        "description": "The only food planner AI you need to eat better, gain time, and save budget.",
+        "role": "Founder"
+      },
+      {
+        "id": "racclimb",
+        "title": "Racclimb",
+        "subTitle": "E-commerce nutrition brand dedicated for climbers.",
+        "description": "",
+        "role": "Founder"
+      },
+      {
+        "id": "kodama",
+        "title": "Kodama Px",
+        "subTitle": "Non-profit organization developing nature prescriptions as a complementary approach to health promotion.",
+        "description": "",
+        "role": "Web Developer"
+      },
+      {
+        "id": "famoco",
+        "title": "Famoco",
+        "subTitle": "Company providing secure mobile solutions to help businesses manage operations, payments, identification and connected devices.",
+        "description": "",
+        "role": "Front-end Developer"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "headline": "Let's meet !",
+    "description": "Book a call to discuss about your project.",
+    "cta": "Book a call"
+  },
+  "footer": {
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "github": "GitHub"
+  }
+}

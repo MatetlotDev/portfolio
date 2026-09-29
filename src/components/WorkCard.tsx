@@ -1,8 +1,19 @@
 import Image from "next/image";
-import type { Work } from "@/data/works";
 
 type WorkCardProps = {
-  work: Work;
+  work: {
+    title: string;
+    subTitle: string;
+    description: string;
+    image: string | null;
+    role: string;
+    url?: string;
+    year?: string;
+    status?: string;
+    technologies?: string[];
+    imageAlt: string;
+    imageFallback: string;
+  };
 };
 
 export function WorkCard({ work }: WorkCardProps) {
@@ -16,14 +27,14 @@ export function WorkCard({ work }: WorkCardProps) {
           {work.image ? (
             <Image
               src={work.image}
-              alt={`${work.title} screenshot`}
+              alt={work.imageAlt}
               fill
               className="project-media object-cover"
               sizes="(min-width: 1024px) 528px, 100vw"
             />
           ) : (
             <div className="project-media flex h-full w-full items-center justify-center">
-              <p className="type-small text-muted">Project image</p>
+              <p className="type-small text-muted">{work.imageFallback}</p>
             </div>
           )}
           <span

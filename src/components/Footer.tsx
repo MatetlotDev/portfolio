@@ -1,34 +1,37 @@
 import { site } from "@/data/site";
+import { getDictionary } from "@/i18n/dictionaries";
 import { GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon } from "./icons";
 
-const footerLinks = [
-  {
-    label: "Email",
-    href: site.email ? `mailto:${site.email}` : undefined,
-    icon: MailIcon,
-  },
-  {
-    label: "LinkedIn",
-    href: site.linkedin,
-    icon: LinkedInIcon,
-  },
-  {
-    label: "Instagram",
-    href: site.instagram,
-    icon: InstagramIcon,
-  },
-  {
-    label: "GitHub",
-    href: site.github,
-    icon: GitHubIcon,
-  },
-];
+export async function Footer() {
+  const dict = await getDictionary();
 
-export function Footer() {
+  const footerLinks = [
+    {
+      label: dict.footer.email,
+      href: site.email ? `mailto:${site.email}` : undefined,
+      icon: MailIcon,
+    },
+    {
+      label: dict.footer.linkedin,
+      href: site.linkedin,
+      icon: LinkedInIcon,
+    },
+    {
+      label: dict.footer.instagram,
+      href: site.instagram,
+      icon: InstagramIcon,
+    },
+    {
+      label: dict.footer.github,
+      href: site.github,
+      icon: GitHubIcon,
+    },
+  ];
+
   return (
     <footer className="border-t border-line">
       <div className="page-container flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="type-small text-muted">{site.name}</p>
+        <p className="type-small text-muted">{dict.meta.name}</p>
         <ul className="flex flex-wrap items-center gap-3">
           {footerLinks.map((link) => {
             const Icon = link.icon;

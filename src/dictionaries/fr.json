@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "name": "Matthias Lechien"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu",
+    "primaryNav": "Navigation principale",
+    "language": "Langue",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "illustrationAlt": "Illustration de {name}",
+    "screenshotAlt": "Capture d'écran de {title}",
+    "projectImage": "Image du projet",
+    "languageNames": {
+      "fr": "Français",
+      "en": "English"
+    }
+  },
+  "nav": {
+    "services": "Services",
+    "work": "Projets",
+    "contact": "Contact",
+    "locales": {
+      "fr": "FR",
+      "en": "EN"
+    }
+  },
+  "hero": {
+    "availability": "Disponible en freelance",
+    "positioning": "Entrepreneur indépendant & product builder",
+    "introduction": "Je construis des produits numériques, des sites web et des expériences e-commerce — de la première idée au produit final.",
+    "cta": "Travaillons ensemble"
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      {
+        "id": "web",
+        "title": "Développement web",
+        "description": "Sites et applications web conçus selon vos besoins. React, Next.js, Vue, WordPress — d'un site simple à une application web plus complexe."
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-commerce",
+        "description": "Créez, améliorez ou maintenez votre boutique en ligne. Shopify et solutions e-commerce sur mesure, de la mise en place au développement, jusqu'aux améliorations et intégrations."
+      },
+      {
+        "id": "mvp",
+        "title": "MVP & développement produit",
+        "description": "Transformez une idée en produit fonctionnel. J'aide à définir, construire et lancer des MVP web, de la première idée jusqu'à un produit utilisable."
+      }
+    ]
+  },
+  "work": {
+    "title": "Projets",
+    "items": [
+      {
+        "id": "urban-boulder",
+        "title": "Urban Boulder",
+        "subTitle": "L'application n°1 de buildering urbain.",
+        "description": "Trouvez des blocs, créez, enregistrez et partagez des bêtas, et trouvez des communautés.",
+        "role": "Fondateur"
+      },
+      {
+        "id": "wikly-food",
+        "title": "Wikly Food",
+        "subTitle": "Encore en construction",
+        "description": "Le seul planificateur de repas par IA dont vous avez besoin pour mieux manger, gagner du temps et faire des économies.",
+        "role": "Fondateur"
+      },
+      {
+        "id": "racclimb",
+        "title": "Racclimb",
+        "subTitle": "Marque e-commerce de nutrition dédiée aux grimpeurs.",
+        "description": "",
+        "role": "Fondateur"
+      },
+      {
+        "id": "kodama",
+        "title": "Kodama Px",
+        "subTitle": "Organisation à but non lucratif qui développe les prescriptions de nature comme approche complémentaire de promotion de la santé.",
+        "description": "",
+        "role": "Développeur web"
+      },
+      {
+        "id": "famoco",
+        "title": "Famoco",
+        "subTitle": "Entreprise qui fournit des solutions mobiles sécurisées pour aider les entreprises à gérer leurs opérations, paiements, identification et appareils connectés.",
+        "description": "",
+        "role": "Développeur front-end"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "headline": "Rencontrons-nous !",
+    "description": "Réservez un appel pour parler de votre projet.",
+    "cta": "Réserver un appel"
+  },
+  "footer": {
+    "email": "E-mail",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "github": "GitHub"
+  }
+}
